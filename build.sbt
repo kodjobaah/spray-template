@@ -1,10 +1,26 @@
-organization  := "com.example"
 
-version       := "0.1"
+import com.typesafe.sbt.SbtNativePackager._
+import twirl.sbt.TwirlPlugin._
+import spray.revolver.RevolverPlugin.Revolver
+
+organization  := "com.peerius"
+
+version       := "1.0"
 
 scalaVersion  := "2.11.2"
 
+name := "access-log-processor"
+
+//packagerSettings
+net.virtualvoid.sbt.graph.Plugin.graphSettings
+
+packageArchetype.java_application
+
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
+
+//twirlImports := Seq("com.peerius.pages")
+
+seq(Twirl.settings: _*)
 
 libraryDependencies ++= {
   val akkaV = "2.3.5"

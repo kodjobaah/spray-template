@@ -1,0 +1,54 @@
+@(name: String, age: Int = 42)
+<html>
+
+<head>
+    <link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/javascript/bootstrap/datepicker/css/bootstrap-datetimepicker.min.css" />
+
+    <script src="/javascript/jquery/jquery.js"></script>
+    <script src="/javascript/moment/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="/javascript/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascript/bootstrap/datepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+</head>
+<body>
+@* This template is a simple html template --- (this text btw. is a comment and is not rendered) *@
+
+<h1>Peerius Access Log Processor</h1>
+
+<form role="form" action="/startProcessor">
+
+  Name:
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <input class="input-group" name="appServer" type="text"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker2'>
+                        <input name="startDate" type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    language: 'eu'
+                });
+            });
+        </script>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+</body>
+</html>
